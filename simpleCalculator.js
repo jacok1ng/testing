@@ -4,18 +4,15 @@ const addNumbers = (numbers) => {
 
   const parsed = numbers
     .replaceAll(" ", "")
+    .replaceAll("\n", ",")
     .split(",")
     .map((item) => parseInt(item))
 
-  if (parsed.length > 2) throw new Error("Too many numbers")
-  parsed.forEach((item) => {
-    if (item > 2 || item < 0) throw new Error("Wrong number")
-  })
   const result = parsed.reduce((acc, curr) => (acc += curr), 0)
 
   return result
 }
 
-addNumbers("1, 2")
+console.log(addNumbers("1\n2,3"))
 
 module.exports = addNumbers
