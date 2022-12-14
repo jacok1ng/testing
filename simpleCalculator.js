@@ -7,6 +7,7 @@ const addNumbers = (numbers) => {
     .replaceAll("\n", ",")
     .split(",")
     .map((item) => parseInt(item))
+    .filter((item) => item < 1000)
 
   const result = parsed.reduce((acc, curr) => (acc += curr), 0)
 

@@ -16,4 +16,7 @@ describe("simpleCalculator test", () => {
   test("Throw error", () => {
     expect(addNumbers("1, 2, 1, 2")).toBe(6)
   })
+  test("Numbers over 1000 should be ignored", () => {
+    expect(addNumbers("1, 2000")).toBe(1)
+  })
 })
