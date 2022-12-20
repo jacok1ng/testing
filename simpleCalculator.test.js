@@ -19,4 +19,12 @@ describe("simpleCalculator test", () => {
   test("Numbers over 1000 should be ignored", () => {
     expect(addNumbers("1, 2000")).toBe(1)
   })
+  test("Change separator to ;", () => {
+    expect(addNumbers("//;\n1;3;1")).toBe(5)
+  })
+  test("Throw error when numbers are negative", () => {
+    expect(() => addNumbers("-3, -4, 6")).toThrow(
+      "Tylko liczby dodatnie są dozwolone. Podane liczby:"
+    )
+  })
 })
