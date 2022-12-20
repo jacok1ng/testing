@@ -27,4 +27,10 @@ describe("simpleCalculator test", () => {
       "Tylko liczby dodatnie są dozwolone. Podane liczby:"
     )
   })
+  test("Custom long separator", () => {
+    expect(addNumbers("//[..]\n1..2..3")).toBe(6)
+  })
+  test("Few custom long separators", () => {
+    expect(addNumbers("//[..][***]\n1..2..3***4***5")).toBe(15)
+  })
 })

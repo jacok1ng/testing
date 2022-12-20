@@ -14,7 +14,7 @@ const parseNumbers = (numbers, separator) => {
 }
 
 const longerSeparator = (numbers) =>
-  numbers.indexOf("\n") - 2 === 1 ? false : true
+  numbers.includes("//") && numbers.indexOf("\n") - 2 !== 1 ? true : false
 
 const addNumbers = (numbers) => {
   if (!numbers) return 0
@@ -59,6 +59,6 @@ const addNumbers = (numbers) => {
   return result
 }
 
-console.log("result", addNumbers("//[zzz]\n1zzz2zzz4zzz-1zzz-6"))
+console.log(addNumbers("1\n2,3"))
 
 module.exports = addNumbers
